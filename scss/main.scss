@@ -1,5 +1,69 @@
-$primary-color: #444;
+@import "config";
+* {
+  box-sizing: border-box;
+}
+
 body {
+  @include background;
   background: $primary-color;
   color: #fff;
+  height: 100%;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  line-height: 1.5;
+}
+//headings design
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 700;
+  &.name-heading {
+    font-size: 7rem;
+    padding: 0.2rem 1rem;
+  }
+  &.description {
+    font-size: 3rem;
+    margin-bottom: 1.6rem;
+    padding: 0.4rem 1.5rem;
+    background: rgba(lighten($second-color, 2), 0.5);
+  }
+}
+a {
+  color: #fff;
+
+  text-decoration: none;
+}
+header {
+  position: fixed; //top where the burger icon is
+  z-index: 2;
+  width: 100%;
+}
+.name-heading {
+  color: #e99090;
+}
+.text-zeini {
+  color: $second-color;
+}
+main {
+  padding: 4rem;
+  height: 100%;
+  .icons {
+    //for each icon wrapped in an a tag
+    margin-top: 1rem;
+    a {
+      padding: 1.6rem;
+
+      &:hover {
+        color: $second-color;
+        @include easing();
+      }
+    }
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
