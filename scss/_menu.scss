@@ -1,0 +1,70 @@
+//pure css
+//menu button
+@import "config";
+.menu-button {
+  position: absolute;
+  z-index: 3;
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easing;
+  .burger-line {
+    width: 48px;
+    height: 6px;
+    margin: 0 0 10px 0;
+    background: #fff;
+    @include easing;
+  }
+  //rotate menu button
+  &.close {
+    transform: rotate(180deg);
+    .burger-line {
+      //first line
+      &:nth-child(1) {
+        background: $second-color;
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        background: $second-color;
+        transform: rotate(-45deg) translate(14px, -12px);
+      }
+    }
+  }
+}
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+  &-branding,
+  &-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($second-color, 3);
+    list-style: none;
+    //not show until show class is applied
+    transform: translate3d(0, 100%, 0);
+    @include easing;
+  }
+  &.show {
+    //sliding from top
+    transform: translate3d(0, 0, 0);
+  }
+}
