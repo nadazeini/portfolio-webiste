@@ -1,12 +1,13 @@
 @import "config";
 @import "menu";
+@import "mobile";
 * {
   box-sizing: border-box;
 }
 
 body {
   @include background;
-  background: $primary-color;
+  background: #561260;
   color: #fff;
   height: 100%;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -20,14 +21,14 @@ h3 {
   margin: 0;
   font-weight: 700;
   &.name-heading {
-    font-size: 7rem;
+    // font-size: 7rem;
     padding: 0.2rem 1rem;
   }
   &.description {
-    font-size: 3rem;
+    @include easing;
     margin-bottom: 1.6rem;
     padding: 0.4rem 1.5rem;
-    background: rgba(lighten($second-color, 2), 0.5);
+    //background: rgba(lighten($second-color, 1), 0.1);
   }
 }
 a {

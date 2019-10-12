@@ -1,0 +1,130 @@
+@include xlarge {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Desktops & Laptops
+@include large {
+  main {
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Tablets & Small Laptops
+@include medium {
+  main {
+    align-items: center;
+    text-align: center;
+
+    .name-heading {
+      margin-top: 1rem;
+      font-size: 5rem;
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  }
+  .nav-link {
+    font-size: 2rem;
+  }
+  .menu {
+    .menu-branding,
+    .menu-nav {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+
+      float: left;
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .menu-nav {
+      margin: 0;
+      padding: 0;
+      background: darken($second-color, 5);
+      list-style: none;
+      transform: translate3d(0, -100%, 0);
+      @include easing;
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    &-branding {
+      background: #fff;
+      transform: translate3d(0, 100%, 0);
+      @include easing;
+
+      &.show {
+        // Slide in from bottom
+        transform: translate3d(0, 0, 0);
+      }
+
+      .portrait {
+        width: 300px;
+        height: 300px;
+        background: url("../pics/IMG_3493.jpg");
+        border-radius: 50%;
+        border: solid 7px $second-color;
+      }
+    }
+  }
+}
+
+// Smartphones
+@include small {
+  main {
+    padding: 2rem;
+    #home h1 {
+      margin-top: 10vh;
+    }
+
+    .name-heading {
+      margin-top: 1rem;
+      font-size: 3rem;
+    }
+    .description {
+      margin-top: 1rem;
+      font-size: 2rem;
+    }
+  }
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .menu {
+    .menu-branding,
+    .menu-nav {
+      float: none;
+      width: 100%;
+      min-height: 0;
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .menu-nav {
+      height: 75vh;
+      transform: translate3d(-100%, 0, 0);
+    }
+
+    .menu-branding {
+      height: 25vh;
+
+      transform: translate3d(100%, 0, 0);
+    }
+    .portrait {
+      width: 345px;
+      background: url("../pics/IMG_3493.jpg");
+      border-radius: 1%;
+      border: solid 1px $second-color;
+    }
+  }
+}

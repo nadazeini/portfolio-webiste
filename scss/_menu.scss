@@ -17,18 +17,18 @@
   }
   //rotate menu button
   &.close {
-    transform: rotate(180deg);
+    // transform: rotate(180deg);
     .burger-line {
       //first line
       &:nth-child(1) {
-        background: $second-color;
+        background: #000;
         transform: rotate(45deg) translate(10px, 10px);
       }
       &:nth-child(2) {
         opacity: 0;
       }
       &:nth-child(3) {
-        background: $second-color;
+        background: #000;
         transform: rotate(-45deg) translate(14px, -12px);
       }
     }
@@ -39,32 +39,42 @@
   top: 0;
   width: 100%;
   opacity: 0.9;
+
   visibility: hidden;
+
   &.show {
     visibility: visible;
   }
-  &-branding,
-  &-nav {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    justify-content: center;
-    float: left;
-    width: 50%;
-    height: 100vh;
-    overflow: hidden;
-  }
-  &-nav {
-    margin: 0;
-    padding: 0;
-    background: darken($second-color, 3);
-    list-style: none;
-    //not show until show class is applied
-    transform: translate3d(0, 100%, 0);
-    @include easing;
-  }
+}
+
+.nav-item {
+  transform: translate3d(600px, 0, 0);
+  @include easing;
+
   &.show {
-    //sliding from top
     transform: translate3d(0, 0, 0);
+  }
+  &.current > a {
+    color: #000;
+  }
+}
+.nav-link {
+  display: inline-block;
+  position: relative;
+  // font-size: 60px;
+  padding: 2rem 0;
+  font-weight: 100;
+  color: #fff;
+  text-decoration: none;
+  @include easing;
+  &:hover {
+    color: #000;
+  }
+}
+
+//delay
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
