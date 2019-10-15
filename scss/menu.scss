@@ -6,6 +6,8 @@
   z-index: 3;
   right: 35px;
   top: 35px;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
   @include easing;
   .burger-line {
@@ -34,14 +36,13 @@
     }
   }
 }
+
 .menu {
   position: fixed;
   top: 0;
   width: 100%;
   opacity: 0.9;
-
   visibility: hidden;
-
   &.show {
     visibility: visible;
   }
@@ -50,7 +51,6 @@
 .nav-item {
   transform: translate3d(600px, 0, 0);
   @include easing;
-
   &.show {
     transform: translate3d(0, 0, 0);
   }
@@ -58,9 +58,11 @@
     color: #000;
   }
 }
+
 .nav-link {
-  display: inline-block;
-  position: relative;
+  display: flex;
+
+  position: fixed;
   // font-size: 60px;
   padding: 2rem 0;
   font-weight: 100;
@@ -73,7 +75,7 @@
 }
 
 //delay
-@for $x from 1 through 4 {
+@for $x from 1 through 5 {
   .nav-item:nth-child(#{$x}) {
     transition-delay: $x * 0.1s;
   }

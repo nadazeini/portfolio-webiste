@@ -7,11 +7,8 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBrand = document.querySelector(".menu-branding");
 //more than one cant use query selector
 const navItems = document.querySelectorAll(".nav-item");
-
-//initial state of menu
-let showMenu = false;
 menuBtn.addEventListener("click", toggleMenu);
-
+let showMenu = false;
 function toggleMenu() {
   if (!showMenu) {
     menuBtn.classList.add("close");
