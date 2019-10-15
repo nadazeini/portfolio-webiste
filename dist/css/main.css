@@ -4,7 +4,7 @@ main {
 }
 main .name-heading {
   font-family: "Courier New", Courier, monospace;
-
+  text-align: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
   font-size: 5rem;
@@ -55,6 +55,8 @@ header {
 
 .text-zeini {
   color: #f08080;
+  text-align: center;
+  justify-content: center;
 }
 img {
   width: 100%;
@@ -300,16 +302,26 @@ ul {
 .project-description .cta:hover {
   color: yellow;
 }
-.timeline ul {
-  border-left: 4px solid #561260;
-  border-radius: 0.8rem;
-  background-color: #000000;
-  margin: 0 auto;
-  position: relative;
-  padding: 2.9rem;
-  list-style: none;
+.timeline h1 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  opacity: 0.7;
+}
+.timeline p {
+  font-size: 1rem;
+
   text-align: left;
-  width: 70%;
+  width: 100%;
+  height: 100%;
+}
+.timeline .date {
+  border-bottom: 3px solid yellow;
+
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
 }
 .timeline h1 {
   font-size: 1rem;
@@ -332,6 +344,18 @@ ul {
   padding-bottom: 1rem;
   position: relative;
 }
+.timeline ul {
+  border-left: 4px solid #561260;
+  border-radius: 0.8rem;
+  background-color: #000000;
+  margin: 0 auto;
+  position: relative;
+  padding: 2.9rem;
+  list-style: none;
+  text-align: left;
+  width: 70%;
+}
+
 .timeline .date:last-of-type {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -417,17 +441,6 @@ input[type="submit"]:hover {
   font-size: 1rem;
 }
 
-/*
-media queries */
-@media screen and (max-width: 768px) {
-  .name-heading h1 {
-    font-size: 2rem;
-  }
-  name-heading h6 {
-    font-size: 1.7rem;
-  }
-}
-
 .menu {
   position: fixed;
   width: 100%;
@@ -441,22 +454,16 @@ media queries */
   border-bottom-left-radius: 100%;
   transition: all 650ms cubic-bezier(1, 0, 0, 1);
 }
-.menu-nav {
-  list-style: none;
-  width: 100%;
-  height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 li {
   margin: 0 2rem;
 }
+
 .nav-link {
   font-family: "Courier New", Courier, monospace;
   color: #561260;
-  font-size: 2rem;
+  font-weight: 10px;
+  font-size: 1.6rem;
   padding: 1rem;
 }
 .nav-link:hover {
@@ -495,6 +502,16 @@ li {
 .menu-button.close .burger-line:nth-child(3) {
   background: #000000;
   transform: rotate(-45deg) translate(12px, -12px);
+}
+.menu-nav {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* done*/
