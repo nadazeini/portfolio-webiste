@@ -99,14 +99,11 @@ main#home h1 {
 
 .img__description {
   position: relative;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+ 
   visibility: hidden;
   color: black;
   opacity: 0;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition: opacity 0.2s, visibility 0.5s;
 }
 .icon-love:hover {
   color: yellow;
@@ -226,17 +223,24 @@ main#home h1 {
   align-items: center;
   padding: 1rem;
   margin-bottom: 2rem;
+ 
 }
-.skill h1 {
+/* .skill h1 {
   font-size: 1rem;
   text-transform: uppercase;
   color: #d797e0;
-  letter-spacing: 2px;
-  margin: 2rem -2px 2rem 0;
-}
-.skill h2 {
+  letter-spacing: 1px;
+  margin: 2rem;
+} */
+/* .skill h2 {
   text-align: center;
   font-size: 1rem;
+} */
+.skill p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2rem ;
 }
 .icon-container {
   width: 5rem;
@@ -264,11 +268,11 @@ main#home h1 {
   margin-bottom: 0;
 }
 
-.project-img {
-  display: flex;
+ .project-img {
+  display: relative;
   padding-right: 1rem;
   width: 50%;
-}
+} 
 .project-description {
   flex: 1;
 }
@@ -515,3 +519,9 @@ li {
 }
 
 /* done*/
+.skill p{
+  color: rgb(205, 207, 80);
+}
+.skill .hiding{
+  color: black;
+}
